@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ركن خدمات الكلية للخدمات المكتبية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1b262c;
+            --secondary-color: #ffffff;
+            --accent-color: #3282b8;
+            --text-color: #fff;
+            --background-color: #1b262c;
+            --card-color: #0f4c75;
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --table-header: #3282b8;
+            --table-row: #1b262c;
+            --table-alt-row: #0f4c75;
+            --open-color: #2ecc71;
+            --closed-color: #e74c3c;
+            --prayer-color: #f39c12;
+            --discount-color: #ff6b6b;
+            --cv-color: #4a5568;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* تأثير الضوء المتحرك */
+        .light-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: lightMove 5s infinite linear;
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0.5;
+        }
+
+        @keyframes lightMove {
+            0% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* الهيدر */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #0f4c75);
+            color: var(--secondary-color);
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        /* قسم الأسعار */
+        .pricing {
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent-color), #bbe1fa);
+            border-radius: 2px;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background-color: var(--card-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px var(--shadow-color);
+        }
+
+        .pricing-table th, .pricing-table td {
+            padding: 18px 15px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing-table th {
+            background-color: var(--table-header);
+            color: var(--secondary-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .pricing-table tr:nth-child(even) {
+            background-color: var(--table-alt-row);
+        }
+
+        .pricing-table tr:nth-child(odd) {
+            background-color: var(--table-row);
+        }
+
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .pricing-table tr:hover {
+            background-color: rgba(50, 130, 184, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        .price {
+            font-weight: 700;
+            color: #bbe1fa;
+            font-size: 1.2rem;
+        }
+
+        .service-icon {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+        }
+
+        /* قسم الحجز */
+        .booking {
+            background: linear-gradient(135deg, var(--card-color), #3282b8);
+            padding: 40px 0;
+            color: var(--secondary-color);
+            text-align: center;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 10px 20px var(--shadow-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .booking-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .booking-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: var(--accent-color);
+            color: var(--secondary-color);
+        }
+
+        /* قسم السيرة الذاتية مع شريط الخصم */
+        .cv-section {
+            position: relative;
+            background: linear-gradient(135deg, var(--cv-color), #2d3748);
+            padding: 40px 0;
+            color: var(--secondary-color);
+            text-align: center;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 10px 20px var(--shadow-color);
+            overflow: hidden;
+        }
+
+        .discount-bar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(90deg, var(--discount-color), #ff8e8e);
+            color: white;
+            padding: 12px 25px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-bottom-left-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+            animation: pulse 2s infinite;
+        }
+
+        .discount-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 30px 30px 0;
+            border-color: transparent #c53030 transparent transparent;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .cv-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        .cv-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .cv-btn {
+            background: linear-gradient(135deg, #f56565, #e53e3e);
+        }
+
+        .cv-btn:hover {
+            background: linear-gradient(135deg, #e53e3e, #c53030);
+        }
+
+        /* فواصل زخرفية */
+        .divider {
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+            margin: 40px auto;
+            width: 80%;
+            border-radius: 3px;
+        }
+
+        /* أزرار التواصِل المنبثقة */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-color), #0f4c75);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .tooltip {
+            position: absolute;
+            right: 70px;
+            background-color: var(--card-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .floating-btn:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 75px;
+        }
+
+        /* الفوتر */
+        footer {
+            background: var(--card-color);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 60px;
+            border-radius: 15px;
+            box-shadow: 0 -5px 15px var(--shadow-color);
+        }
+
+        .copyright {
+            font-size: 1rem;
+        }
+
+        /* التجاوب مع الشاشات المختلفة */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .pricing-table {
+                font-size: 0.9rem;
+            }
+            
+            .pricing-table th, .pricing-table td {
+                padding: 12px 8px;
+            }
+            
+            .floating-buttons {
+                left: 15px;
+                bottom: 15px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+
+            .discount-bar {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pricing-table {
+                font-size: 0.8rem;
+            }
+            
+            .pricing-table th, .pricing-table td {
+                padding: 10px 5px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+            
+            .discount-bar {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+            
+            .cv-title, .booking-title {
+                font-size: 1.5rem;
+            }
+            
+            .cv-description, .booking-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- تأثير الضوء المتحرك -->
+    <div class="light-effect"></div>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="container">
+            <h1 class="logo">ركن خدمات الكلية</h1>
+            <p class="tagline">لجميع الخدمات المكتبية والطباعة</p>
+        </div>
+    </header>
+
+    <!-- قسم الأسعار -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">قائمة الأسعار</h2>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>الخدمة</th>
+                        <th>السعر</th>
+                        <th>التفاصيل</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="service-icon">
+                                <i class="fas fa-print"></i>
+                            </div>
+                            الطباعة بالأبيض والأسود
+                        </td>
+                        <td class="price">1.00 ريال</td>
+                        <td>ورقتان</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="service-icon">
+                                <i class="fas fa-copy"></i>
+                            </div>
+                            التصوير بالأبيض والأسود
+                        </td>
+                        <td class="price">1.00 ريال</td>
+                        <td>خمس ورقات</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="service-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            الطباعة الملوّنة
+                        </td>
+                        <td class="price">حسب المحتوى</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="service-icon">
+                                <i class="fas fa-file-contract"></i>
+                            </div>
+                            التغليف الحراري
+                        </td>
+                        <td class="price">5.00 ريال</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="service-icon">
+                                <i class="fas fa-tape"></i>
+                            </div>
+                            التغليف بالشريط اللاصق
+                        </td>
+                        <td class="price">3.00 ريال</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="service-icon">
+                                <i class="fas fa-ring"></i>
+                            </div>
+                            التغليف بالسلك البلاستيكي
+                        </td>
+                        <td class="price">5.00 – 7.00 ريال</td>
+                        <td>الصغير بـ 5 ريال – الكبير بـ 7 ريال</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="service-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            إنشاء موقع إلكتروني تعريفي
+                        </td>
+                        <td class="price">45.00 ريال</td>
+                        <td>موقع لعرض بيانات التواصل والموقع الجغرافي لمشروعك مع ملصق QR</td>
+                    </tr>
+                    <tr>
+                       
+                        <td>
+                            <div class="service-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            عرض المذكرة في متجرنا الإلكتروني للحجز
+                        </td>
+                        <td class="price">5.00 ريال</td>
+                        <td>
+                            يحصل المعلّم على رابط خاص لمشاركته مع طلابه لتسهيل الوصول إلى المذكرات
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- فواصل زخرفية -->
+    <div class="divider"></div>
+
+    <!-- قسم الحجز -->
+    <section class="booking">
+        <div class="container">
+            <h2 class="booking-title">احجز ملخصاتك ومذكراتك الآن</h2>
+            <p class="booking-description">نوفر لك خدمة حجز الملخصات والمذكرات بجودة عالية وأسعار مناسبة. يمكنك طلب ما تحتاجه وسنقوم بتجهيزه لك في أقصر وقت ممكن.</p>
+            <a href="http://68a9993fc451e.site123.me" class="btn">احجز الآن</a>
+        </div>
+    </section>
+
+    <!-- فواصل زخرفية -->
+    <div class="divider"></div>
+
+    <!-- قسم السيرة الذاتية مع شريط الخصم -->
+    <section class="cv-section">
+        <div class="discount-bar">خصم 50% لفترة محدودة</div>
+        <div class="container">
+            <h2 class="cv-title">تصميم سيرة ذاتية احترافية</h2>
+            <p class="cv-description">نقدم لك خدمة تصميم سيرة ذاتية مميزة تساعدك على التميز في سوق العمل. احصل على سيرة ذاتية احترافية تعبر عن مهاراتك وخبراتك بأفضل شكل.</p>
+            <a href="CV.HTML" class="btn cv-btn">اطلب سيرتك الذاتية</a>
+        </div>
+    </section>
+
+    <!-- فواصل زخرفية -->
+    <div class="divider"></div>
+
+    <!-- أزرار التواصِل المنبثقة -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/966501314887" class="floating-btn">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">تواصل عبر الواتساب</span>
+        </a>
+        <a href="https://maps.app.goo.gl/KJrkPgfRzy8doLhh6" class="floating-btn">
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="tooltip">الموقع الجغرافي</span>
+        </a>
+        <a href="CV.HTML" class="floating-btn">
+            <i class="fas fa-file-alt"></i>
+            <span class="tooltip">تصميم السيرة الذاتية</span>
+        </a>
+    </div>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2025 ركن خدمات الكلية. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // تأثيرات إضافية للجدول
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableRows = document.querySelectorAll('.pricing-table tr');
+            
+            tableRows.forEach(row => {
+                row.addEventListener('mouseenter', () => {
+                    row.style.transform = 'scale(1.02)';
+                    row.style.transition = 'transform 0.3s ease';
+                });
+                
+                row.addEventListener('mouseleave', () => {
+                    row.style.transform = 'scale(1)';
+                });
+            });
+
+            // تأثير الكتابة في الهيدر
+            const tagline = document.querySelector('.tagline');
+            const originalText = tagline.textContent;
+            tagline.textContent = '';
+            let i = 0;
+            
+            function typeWriter() {
+                if (i < originalText.length) {
+                    tagline.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            }
+            
+            setTimeout(typeWriter, 1000);
+        });
+    </script>
+</body>
+</html>

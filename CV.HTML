@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات السيرة الذاتية الاحترافية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --navy: #3C4F76;
+            --red: #e74c3c;
+            --black: #2c3e50;
+            --green: #27ae60;
+            --purple: #8e44ad;
+            --gold: #f1c40f;
+            --teal: #1abc9c;
+            --orange: #f39c12;
+            --dark-blue: #2c3e50;
+            --light-gray: #f8f9fa;
+            --dark-gray: #6c757d;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .top-bar {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .top-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .top-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .top-icon:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><text x="50%" y="50%" font-size="20" text-anchor="middle" dominant-baseline="middle" fill="white">CV</text></svg>');
+            background-repeat: repeat;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            backdrop-filter: blur(5px);
+        }
+        
+        .promo-banner {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 18px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 25px 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .promo-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -50%; }
+            100% { left: 100%; }
+        }
+        
+        .discount-text {
+            font-size: 22px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .discount-text i {
+            font-size: 28px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .countdown {
+            display: flex;
+            gap: 12px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 12px 18px;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .countdown-item {
+            text-align: center;
+            min-width: 55px;
+            position: relative;
+        }
+        
+        .countdown-number {
+            font-size: 26px;
+            font-weight: bold;
+            background: white;
+            color: #e74c3c;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .countdown-number::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.5) 100%);
+        }
+        
+        .countdown-label {
+            font-size: 13px;
+            margin-top: 6px;
+            font-weight: bold;
+        }
+        
+        .premium-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(135deg, #f1c40f 0%, #e67e22 100%);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 15px;
+            color: var(--dark-blue);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .package {
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #eaeaea;
+        }
+        
+        .package:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .package::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent), var(--primary));
+        }
+        
+        .package.premium::after {
+            background: linear-gradient(90deg, #f1c40f, #e67e22);
+        }
+        
+        .package-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        
+        .package-title {
+            font-weight: bold;
+            font-size: 22px;
+            color: var(--primary);
+        }
+        
+        .package-price {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #95a5a6;
+            font-size: 17px;
+        }
+        
+        .discounted-price {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 24px;
+        }
+        
+        .recommended-tag {
+            position: absolute;
+            top: 15px;
+            left: -30px;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 5px 30px;
+            font-size: 14px;
+            font-weight: bold;
+            transform: rotate(-45deg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+        
+        .color-options {
+            display: flex;
+            gap: 12px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .color-option {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .color-option:hover {
+            transform: scale(1.15);
+        }
+        
+        .color-option.selected {
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 3px var(--accent);
+        }
+        
+        .color-red {
+            background-color: var(--red);
+        }
+        
+        .color-navy {
+            background-color: var(--navy);
+        }
+        
+        .color-black {
+            background-color: var(--black);
+        }
+        
+        .color-green {
+            background-color: var(--green);
+        }
+        
+        .color-purple {
+            background-color: var(--purple);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-align: center;
+            margin: 8px 0;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            margin-top: 25px;
+            padding: 15px 25px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-steps {
+            display: flex;
+            justify-content: space-around;
+            margin: 35px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .whatsapp-step {
+            text-align: center;
+            width: 130px;
+        }
+        
+        .whatsapp-step i {
+            font-size: 45px;
+            color: #25D366;
+            margin-bottom: 12px;
+        }
+        
+        .whatsapp-step p {
+            font-size: 15px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .faq-section {
+            margin-top: 60px;
+        }
+        
+        .faq-item {
+            margin-bottom: 25px;
+            border: 1px solid #eaeaea;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            background: linear-gradient(90deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 18px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 18px;
+        }
+        
+        .faq-answer {
+            padding: 20px 25px;
+            background: white;
+            display: none;
+            line-height: 1.8;
+        }
+        
+        .faq-active .faq-answer {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        .faq-active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #aaa;
+            z-index: 10;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: #000;
+        }
+        
+        .modal-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .zoom-btn {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .zoom-btn:hover {
+            background: rgba(0,0,0,0.9);
+            transform: scale(1.1);
+        }
+        
+        .color-label {
+            font-size: 14px;
+            text-align: center;
+            margin-top: 8px;
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+        
+        .electronic-preview {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+        }
+        
+        /* إعلان سينمائي */
+        .cinematic-ad {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(52, 152, 219, 0.95) 100%);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            animation: fadeIn 0.8s;
+        }
+        
+        .cinematic-ad h2 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .cinematic-ad p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+        
+        .cinematic-ad .countdown {
+            margin: 25px 0;
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .cinematic-ad .btn {
+            width: auto;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            margin-top: 25px;
+        }
+        
+        /* شريط التوصية */
+        .recommendation-bar {
+            background: linear-gradient(135deg, var(--gold) 0%, #e67e22 100%);
+            color: var(--dark);
+            padding: 18px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 25px 0;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        
+        .recommendation-bar i {
+            font-size: 28px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .recommendation-text {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        /* تحسينات للمعاينة */
+        .preview-colors {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+        
+        .preview-color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .preview-color-option.selected {
+            border-color: #fff;
+            box-shadow: 0 0 0 3px var(--accent);
+        }
+        
+        .preview-image-container {
+            text-align: center;
+            margin: 20px 0;
+            max-height: 70vh;
+            overflow: hidden;
+        }
+        
+        .preview-image {
+            max-width: 100%;
+            max-height: 65vh;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .iframe-container {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .preview-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .service-features {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-right: 5px solid var(--accent);
+        }
+        
+        .service-features ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .service-features li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        
+        .service-features i {
+            color: var(--green);
+            margin-left: 12px;
+            font-size: 18px;
+        }
+        
+        .quality-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--teal) 0%, #16a085 100%);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        
+        .simple-contact-form {
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            padding: 35px;
+            margin-top: 40px;
+            border: 1px solid #eaeaea;
+            text-align: center;
+        }
+        
+        .simple-contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-size: 26px;
+        }
+        
+        .simple-contact-form p {
+            margin-bottom: 25px;
+            color: #666;
+            font-size: 17px;
+        }
+        
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            border-radius: 15px 15px 0 0;
+        }
+        
+        @media (max-width: 768px) {
+            .packages {
+                grid-template-columns: 1fr;
+            }
+            
+            .promo-banner {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .cinematic-ad h2 {
+                font-size: 2rem;
+            }
+            
+            .cinematic-ad p {
+                font-size: 1rem;
+            }
+            
+            .whatsapp-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .top-bar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px;
+            }
+            
+            .preview-image {
+                max-height: 50vh;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- إعلان سينمائي -->
+    <div class="cinematic-ad animate__animated animate__zoomIn" id="cinematicAd">
+        <h2>خدمات السيرة الذاتية الاحترافية</h2>
+        <p>احصل على سيرة ذاتية متميزة تزيد من فرصتك في الحصول على الوظيفة بخصم 50% لمدة محدودة!</p>
+        
+        <div class="countdown">
+            <div class="countdown-item">
+                <div class="countdown-number" id="cinematicDays">00</div>
+                <div class="countdown-label">أيام</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="cinematicHours">00</div>
+                <div class="countdown-label">ساعات</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="cinematicMinutes">00</div>
+                <div class="countdown-label">دقائق</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="cinematicSeconds">00</div>
+                <div class="countdown-label">ثواني</div>
+            </div>
+        </div>
+        
+        <button class="btn" id="closeCinematicAd">ابدأ الآن</button>
+    </div>
+    
+    <div class="top-bar">
+        <div>خدمات السيرة الذاتية الاحترافية</div>
+        <div class="top-icons">
+            <a href="/" class="top-icon" title="الصفحة الرئيسية">
+                <i class="fas fa-home"></i>
+            </a>
+            <a href="https://goo.gl/maps/example" class="top-icon" title="الموقع الجغرافي" target="_blank">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+            <a href="https://wa.me/966558644701" class="top-icon" title="واتساب" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">CV Pro</div>
+            <h1>خدمات السيرة الذاتية الاحترافية</h1>
+            <p>اختر النموذج المناسب لسيرتك الذاتية وتميز عن الآخرين</p>
+        </header>
+        
+        <div class="promo-banner">
+            <div class="discount-text">
+                <i class="fas fa-gift"></i>
+                خصم 50% لمدة محدودة! 
+            </div>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">أيام</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">ساعات</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">دقائق</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">ثواني</div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="packages">
+            <!-- السيرة الذاتية الكلاسيكية عربي -->
+            <div class="package">
+                <div class="quality-badge">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="package-header">
+                    <div class="package-title">سيرة ذاتية كلاسيكية عربي</div>
+                    <div class="package-price">
+                        <span class="original-price">54 ريال</span>
+                        <span class="discounted-price">27 ريال</span>
+                    </div>
+                </div>
+                <p>تصميم كلاسيكي مناسب لجميع المجالات باللغة العربية</p>
+                <div class="color-options">
+                    <div class="color-option color-red selected" title="أحمر" data-color="red"></div>
+                    <div class="color-option color-navy" title="كحلي" data-color="navy"></div>
+                    <div class="color-option color-black" title="أسود" data-color="black"></div>
+                </div>
+                <div class="color-label">اللون المختار: أحمر</div>
+                
+                <div class="service-features">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> طباعة ملونة عالية الجودة</li>
+                        <li><i class="fas fa-check-circle"></i> إرسال ملف PDF قابل للطباعة</li>
+                        <li><i class="fas fa-check-circle"></i> تصميم عربي احترافي</li>
+                    </ul>
+                </div>
+                
+                <button class="btn preview-btn" data-type="classic-ar">معاينة النموذج</button>
+                <a href="https://wa.me/966558644701?text=مرحباً، أريد طلب سيرة ذاتية كلاسيكية عربي (اللون: أحمر) بسعر 37.5 ريال" class="btn whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> طلب عبر واتساب
+                </a>
+            </div>
+            
+            <!-- السيرة الذاتية الكلاسيكية انجليزي -->
+            <div class="package">
+                <div class="quality-badge">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="package-header">
+                    <div class="package-title">سيرة ذاتية كلاسيكية انجليزي</div>
+                    <div class="package-price">
+                        <span class="original-price">64 ريال</span>
+                        <span class="discounted-price">32 ريال</span>
+                    </div>
+                </div>
+                <p>تصميم كلاسيكي مناسب لجميع المجالات باللغة الإنجليزية</p>
+                <div class="color-options">
+                    <div class="color-option color-red" title="أحمر" data-color="red"></div>
+                    <div class="color-option color-navy selected" title="كحلي" data-color="navy"></div>
+                    <div class="color-option color-black" title="أسود" data-color="black"></div>
+                </div>
+                <div class="color-label">اللون المختار: كحلي</div>
+                
+                <div class="service-features">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> طباعة ملونة عالية الجودة</li>
+                        <li><i class="fas fa-check-circle"></i> إرسال ملف PDF قابل للطباعة</li>
+                        <li><i class="fas fa-check-circle"></i> تصميم إنجليزي احترافي</li>
+                    </ul>
+                </div>
+                
+                <button class="btn preview-btn" data-type="classic-en">معاينة النموذج</button>
+                <a href="https://wa.me/966558644701?text=مرحباً، أريد طلب سيرة ذاتية كلاسيكية انجليزي (اللون: كحلي) بسعر 40 ريال" class="btn whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> طلب عبر واتساب
+                </a>
+            </div>
+            
+            
+            <!-- السيرة الذاتية الاحترافية عربي -->
+            <div class="package">
+                <div class="quality-badge">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <div class="package-header">
+                    <div class="package-title">سيرة ذاتية احترافية عربي</div>
+                    <div class="package-price">
+                        <span class="original-price">70 ريال</span>
+                        <span class="discounted-price">35 ريال</span>
+                    </div>
+                </div>
+                <p>تصميم احترافي مميز باللغة العربية</p>
+                <div class="color-options">
+                    <div class="color-option color-red" title="أحمر" data-color="red"></div>
+                    <div class="color-option color-navy selected" title="كحلي" data-color="navy"></div>
+                    <div class="color-option color-black" title="أسود" data-color="black"></div>
+                    <div class="color-option color-green" title="أخضر" data-color="green"></div>
+                </div>
+                <div class="color-label">اللون المختار: كحلي</div>
+                
+                <div class="service-features">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> طباعة ملونة عالية الجودة</li>
+                        <li><i class="fas fa-check-circle"></i> إرسال ملف PDF قابل للطباعة</li>
+                        <li><i class="fas fa-check-circle"></i> تصميم عربي احترافي مميز</li>
+                    </ul>
+                </div>
+                
+                <button class="btn preview-btn" data-type="pro-ar">معاينة النموذج</button>
+                <a href="https://wa.me/966558644701?text=مرحباً، أريد طلب سيرة ذاتية احترافية عربي (اللون: كحلي) بسعر 45 ريال" class="btn whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> طلب عبر واتساب
+                </a>
+            </div>
+            
+            <!-- السيرة الذاتية الاحترافية انجليزي -->
+            <div class="package">
+                <div class="quality-badge">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <div class="package-header">
+                    <div class="package-title">سيرة ذاتية احترافية انجليزي</div>
+                    <div class="package-price">
+                        <span class="original-price">78 ريال</span>
+                        <span class="discounted-price">39 ريال</span>
+                    </div>
+                </div>
+                <p>تصميم احترافي مميز باللغة الإنجليزية</p>
+                <div class="color-options">
+                    <div class="color-option color-red selected" title="أحمر" data-color="red"></div>
+                    <div class="color-option color-navy" title="كحلي" data-color="navy"></div>
+                    <div class="color-option color-black" title="أسود" data-color="black"></div>
+                    <div class="color-option color-purple" title="بنفسجي" data-color="purple"></div>
+                </div>
+                <div class="color-label">اللون المختار: أحمر</div>
+                
+                <div class="service-features">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> طباعة ملونة عالية الجودة</li>
+                        <li><i class="fas fa-check-circle"></i> إرسال ملف PDF قابل للطباعة</li>
+                        <li><i class="fas fa-check-circle"></i> تصميم إنجليزي احترافي مميز</li>
+                    </ul>
+                </div>
+                
+                <button class="btn preview-btn" data-type="pro-en">معاينة النموذج</button>
+                <a href="https://wa.me/966558644701?text=مرحباً، أريد طلب سيرة ذاتية احترافية انجليزي (اللون: أحمر) بسعر 47.5 ريال" class="btn whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> طلب عبر واتساب
+                </a>
+            </div>
+            
+           
+            
+            <!-- السيرة الذاتية المتطورة -->
+            <div class="package premium">
+                <div class="quality-badge">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <div class="recommended-tag">موصى به</div>
+                <div class="package-header">
+                    <div class="package-title">سيرة ذاتية احترافية متطورة</div>
+                    <div class="package-price">
+                        <span class="original-price">350 ريال</span>
+                        <span class="discounted-price">175ريال</span>
+                    </div>
+                </div>
+                <p>سيرة ذاتية متطورة مع نسخة إلكترونية (HTML) عربي/إنجليزي</p>
+                <div class="color-options">
+                    <div class="color-option color-red" title="أحمر" data-color="red"></div>
+                    <div class="color-option color-navy" title="كحلي" data-color="navy"></div>
+                    <div class="color-option color-black" title="أسود" data-color="black"></div>
+                    <div class="color-option color-green" title="أخضر" data-color="green"></div>
+                    <div class="color-option color-purple selected" title="بنفسجي" data-color="purple"></div>
+                </div>
+                <div class="color-label">اللون المختار: بنفسجي</div>
+                
+                <div class="service-features">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> طباعة ملونة عالية الجودة</li>
+                        <li><i class="fas fa-check-circle"></i> إرسال ملف PDF قابل للطباعة</li>
+                        <li><i class="fas fa-check-circle"></i> موقع إلكتروني يعمل لمدة 6 أشهر مجاناً</li>
+                        <li><i class="fas fa-check-circle"></i> تصميم متطور ثنائي اللغة</li>
+                    </ul>
+                </div>
+                
+                <button class="btn preview-btn" data-type="premium">معاينة النموذج</button>
+                <button class="btn electronic-preview" data-type="electronic">معاينة الإلكترونية</button>
+                <a href="https://wa.me/966558644701?text=مرحباً، أريد طلب سيرة ذاتية احترافية متطورة (اللون: بنفسجي) بسعر 215 ريال" class="btn whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> طلب عبر واتساب
+                </a>
+            </div>
+        </div>
+        
+        <div class="simple-contact-form">
+            <h3>مرحباً، للاستفسار تواصل معنا</h3>
+            <p>سنقدم لكم نموذج للمعلومات المطلوبة حسب حالتك لانشاء CV احترافي</p>
+            
+            <a href="https://wa.me/966558644701" class="btn whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> التواصل عبر واتساب
+            </a>
+        </div>
+        
+        <div class="faq-section">
+            <h2>الأسئلة الشائعة</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>كم من الوقت يستغرق إعداد السيرة الذاتية؟</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>يستغرق إعداد السيرة الذاتية من 24 إلى 48 ساعة عمل بعد تأكيد الطلب واستلام جميع البيانات المطلوبة.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>هل يمكنني طلب تعديلات على السيرة الذاتية بعد استلامها?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>نعم، السيرة الذاتية الإلكترونية قابلة للتعديل مجاناً خلال أول 3 أيام من الاستلام. بعد ذلك، تكون التعديلات والإضافات برسوم 5 ريال لكل تعديل.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>ما هي طرق الدفع المتاحة؟</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>الدفع في المتجر فقط عبر شبكة مدى أو كاش. سيتم إرسال تفاصيل الدفع بعد تأكيد الطلب.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>هل السيرة الذاتية الإلكترونية قابلة للتعديل؟</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>نعم، السيرة الذاتية الإلكترونية تأتي مع كود HTML قابل للتعديل باستخدام أي محرر نصوص. كما نوفر خدمة التعديل بمقابل مادي بعد أول 3 أيام.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة معاينة السيرة الذاتية -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="previewTitle">معاينة السيرة الذاتية</h3>
+            <div class="preview-colors" id="previewColors">
+                <!-- سيتم إضافة أزرار الألوان هنا -->
+            </div>
+            <div class="preview-image-container">
+                <img id="previewImage" src="" alt="معاينة السيرة الذاتية" class="preview-image">
+            </div>
+            <button class="zoom-btn" id="zoomImage">
+                <i class="fas fa-search-plus"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- نافذة المعاينة الإلكترونية -->
+    <div id="electronicModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>معاينة السيرة الذاتية الإلكترونية</h3>
+            <div class="iframe-container">
+                <iframe id="electronicPreview" class="preview-iframe" src=""></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة الصورة المكبرة -->
+    <div id="fullscreenModal" class="modal">
+        <div class="modal-content" style="max-width: 95%; max-height: 95%;">
+            <span class="close-modal">&times;</span>
+            <img src="" alt="صورة مكبرة" id="fullscreenImage" style="width: 100%; height: auto;">
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 ركن خدمات الكلية. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        // بيانات الصور لكل نوع من السير الذاتية
+        const cvImages = {
+            'classic-ar': {
+                'red': 'Preview/red-37.jpg',
+                'navy': 'Preview/Navy-37.jpg',
+                'black': 'Preview/Black-37.jpg'
+            },
+            'classic-en': {
+                'red': 'Preview/E-red-37.jpg',
+                'navy': 'Preview/E-Navy-37.jpg',
+                'black': 'Preview/E-Black-37.jpg'
+            },
+            'classic-ar-en': {
+                'red': 'سيرة-ذاتية-عربي-انجليزي-أحمر.jpg',
+                'navy': 'سيرة-ذاتية-عربي-انجليزي-كحلي.jpg',
+                'black': 'سيرة-ذاتية-عربي-انجليزي-أسود.jpg'
+            },
+            'pro-ar': {
+                'red': 'سيرة-ذاتية-احترافية-عربي-أحمر.jpg',
+                'navy': 'سيرة-ذاتية-احترافية-عربي-كحلي.jpg',
+                'black': 'سيرة-ذاتية-احترافية-عربي-أسود.jpg',
+                'green': 'سيرة-ذاتية-احترافية-عربي-أخضر.jpg'
+            },
+            'pro-en': {
+                'red': 'سيرة-ذاتية-احترافية-انجليزي-أحمر.jpg',
+                'navy': 'سيرة-ذاتية-احترافية-انجليزي-كحلي.jpg',
+                'black': 'سيرة-ذاتية-احترافية-انجليزي-أسود.jpg',
+                'purple': 'سيرة-ذاتية-احترافية-انجليزي-بنفسجي.jpg'
+            },
+            'pro-ar-en': {
+                'red': 'سيرة-ذاتية-احترافية-عربي-انجليزي-أحمر.jpg',
+                'navy': 'سيرة-ذاتية-احترافية-عربي-انجليزي-كحلي.jpg',
+                'black': 'سيرة-ذاتية-احترافية-عربي-انجليزي-أسود.jpg',
+                'green': 'سيرة-ذاتية-احترافية-عربي-انجليزي-أخضر.jpg',
+                'purple': 'سيرة-ذاتية-احترافية-عربي-انجليزي-بنفسجي.jpg'
+            },
+            'premium': {
+                'red': 'سيرة-ذاتية-احترافية-متطورة-أحمر.jpg',
+                'navy': 'سيرة-ذاتية-احترافية-متطورة-كحلي.jpg',
+                'black': 'سيرة-ذاتية-احترافية-متطورة-أسود.jpg',
+                'green': 'سيرة-ذاتية-احترافية-متطورة-أخضر.jpg',
+                'purple': 'سيرة-ذاتية-احترافية-متطورة-بنفسجي.jpg'
+            }
+        };
+
+        // بيانات الصفحات الإلكترونية لكل لون
+        const electronicPages = {
+            'red': '1سيرة.html',
+            'navy': '2سيرة.html',
+            'black': '3سيرة.html',
+            'green': '4سيرة.html',
+            'purple': 'سيرة.html'
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // إظهار الإعلان السينمائي عند فتح الموقع
+            const cinematicAd = document.getElementById('cinematicAd');
+            cinematicAd.style.display = 'flex';
+            
+            // إغلاق الإعلان السينمائي تلقائياً بعد 2.5 ثانية
+            setTimeout(function() {
+                cinematicAd.style.display = 'none';
+            }, 2500);
+            
+            // إغلاق الإعلان السينمائي يدوياً
+            document.getElementById('closeCinematicAd').addEventListener('click', function() {
+                cinematicAd.style.display = 'none';
+            });
+            
+            // عداد التنازلي حتى 22 سبتمبر من العام الحالي
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const countdownDate = new Date(currentYear, 8, 22); // 22 سبتمبر (الشهر يبدأ من 0)
+            
+            // إذا كان تاريخ 22 سبتمبر قد مضى هذا العام، نضبطه للعام المقبل
+            if (now > countdownDate) {
+                countdownDate.setFullYear(currentYear + 1);
+            }
+            
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById("days").textContent = days;
+                document.getElementById("hours").textContent = hours;
+                document.getElementById("minutes").textContent = minutes;
+                document.getElementById("seconds").textContent = seconds;
+                
+                document.getElementById("cinematicDays").textContent = days;
+                document.getElementById("cinematicHours").textContent = hours;
+                document.getElementById("cinematicMinutes").textContent = minutes;
+                document.getElementById("cinematicSeconds").textContent = seconds;
+                
+                if (distance < 0) {
+                    clearInterval(countdownTimer);
+                    document.querySelector(".promo-banner").innerHTML = "<div class='discount-text'>انتهت فترة العرض!</div>";
+                }
+            }
+            
+            updateCountdown();
+            const countdownTimer = setInterval(updateCountdown, 1000);
+            
+            // اختيار اللون
+            const colorOptions = document.querySelectorAll('.color-option');
+            
+            colorOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // إضافة تأثير للون المحدد
+                    const parentPackage = this.closest('.package');
+                    parentPackage.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    
+                    // تحديث نص اللون المختار
+                    const colorName = this.getAttribute('title');
+                    parentPackage.querySelector('.color-label').textContent = `اللون المختار: ${colorName}`;
+                    
+                    // تحديث رابط الواتساب مع اللون المختار
+                    const whatsappLink = parentPackage.querySelector('.whatsapp-btn');
+                    const packageTitle = parentPackage.querySelector('.package-title').textContent;
+                    const packagePrice = parentPackage.querySelector('.discounted-price').textContent;
+                    const colorValue = this.getAttribute('data-color');
+                    const colorNameAr = this.getAttribute('title');
+                    
+                    const whatsappText = `مرحباً، أريد طلب ${packageTitle} (اللون: ${colorNameAr}) بسعر ${packagePrice}`;
+                    whatsappLink.href = `https://wa.me/966558644701?text=${encodeURIComponent(whatsappText)}`;
+                });
+            });
+            
+            // معاينة النموذج
+            const previewButtons = document.querySelectorAll('.preview-btn');
+            const modal = document.getElementById('previewModal');
+            const fullscreenModal = document.getElementById('fullscreenModal');
+            const closeModal = document.querySelectorAll('.close-modal');
+            const previewImage = document.getElementById('previewImage');
+            const zoomBtn = document.getElementById('zoomImage');
+            const fullscreenImage = document.getElementById('fullscreenImage');
+            const previewColorsContainer = document.getElementById('previewColors');
+            const previewTitle = document.getElementById('previewTitle');
+            
+            previewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const templateType = this.getAttribute('data-type');
+                    const packageElement = this.closest('.package');
+                    const color = packageElement.querySelector('.color-option.selected').getAttribute('data-color');
+                    const title = packageElement.querySelector('.package-title').textContent;
+                    
+                    // تحديث عنوان المعاينة
+                    previewTitle.textContent = `معاينة ${title}`;
+                    
+                    // إنشاء أزرار الألوان للمعاينة
+                    updatePreviewColors(templateType, color);
+                    
+                    // عرض الصورة المناسبة
+                    updatePreviewImage(templateType, color);
+                    
+                    modal.style.display = 'flex';
+                });
+            });
+            
+            // تحديث أزرار الألوان في نافذة المعاينة
+            function updatePreviewColors(templateType, currentColor) {
+                previewColorsContainer.innerHTML = '';
+                
+                const availableColors = Object.keys(cvImages[templateType]);
+                
+                availableColors.forEach(color => {
+                    const colorBtn = document.createElement('div');
+                    colorBtn.className = `preview-color-option color-${color} ${color === currentColor ? 'selected' : ''}`;
+                    colorBtn.setAttribute('data-color', color);
+                    colorBtn.setAttribute('title', getColorName(color));
+                    
+                    colorBtn.addEventListener('click', function() {
+                        // تحديث اللون المختار في المعاينة
+                        document.querySelectorAll('.preview-color-option').forEach(btn => {
+                            btn.classList.remove('selected');
+                        });
+                        this.classList.add('selected');
+                        
+                        // تحديث الصورة المعروضة
+                        updatePreviewImage(templateType, color);
+                    });
+                    
+                    previewColorsContainer.appendChild(colorBtn);
+                });
+            }
+            
+            // تحديث صورة المعاينة
+            function updatePreviewImage(templateType, color) {
+                const imageUrl = cvImages[templateType][color];
+                previewImage.src = imageUrl;
+                previewImage.alt = `معاينة ${templateType} ${color}`;
+            }
+            
+            // الحصول على اسم اللون بالعربية
+            function getColorName(color) {
+                const colorNames = {
+                    'red': 'أحمر',
+                    'navy': 'كحلي',
+                    'black': 'أسود',
+                    'green': 'أخضر',
+                    'purple': 'بنفسجي'
+                };
+                return colorNames[color] || color;
+            }
+            
+            // تكبير الصورة في المعاينة
+            zoomBtn.addEventListener('click', function() {
+                fullscreenImage.src = previewImage.src;
+                fullscreenModal.style.display = 'flex';
+            });
+            
+            // معاينة الإلكترونية
+            const electronicPreviewBtn = document.querySelector('.electronic-preview');
+            const electronicModal = document.getElementById('electronicModal');
+            const electronicPreview = document.getElementById('electronicPreview');
+            
+            if (electronicPreviewBtn) {
+                electronicPreviewBtn.addEventListener('click', function() {
+                    const packageElement = this.closest('.package');
+                    const color = packageElement.querySelector('.color-option.selected').getAttribute('data-color');
+                    
+                    // تحميل الصفحة الإلكترونية المناسبة
+                    electronicPreview.src = electronicPages[color];
+                    electronicModal.style.display = 'flex';
+                });
+            }
+            
+            // إغلاق النوافذ المنبثقة
+            closeModal.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    modal.style.display = 'none';
+                    fullscreenModal.style.display = 'none';
+                    electronicModal.style.display = 'none';
+                });
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target == modal || event.target == fullscreenModal || event.target == electronicModal) {
+                    modal.style.display = 'none';
+                    fullscreenModal.style.display = 'none';
+                    electronicModal.style.display = 'none';
+                }
+            });
+            
+            // الأسئلة الشائعة
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    item.classList.toggle('faq-active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
