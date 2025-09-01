@@ -3,27 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وائل أحمد - مصمم جرافيك | Wael Ahmed - Graphic Designer</title>
+    <title>صابر أحمد - مصمم جرافيك | Saber Ahmed - Graphic Designer</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-primary: #94b9ff;
-            --color-secondary: #cdffd8;
+            --color-primary: #b88955;
+            --color-secondary: #e8d6c3;
+            --color-accent: #a57c4f;
             --color-white: #ffffff;
             --color-light: #f8f9fa;
+            --color-dark: #2d3748;
             --color-text: #333333;
             --color-text-light: #666666;
             --transition: all 0.3s ease;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            --border-radius: 12px;
-            --container-width: 90%;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.15);
+            --border-radius: 16px;
+            --container-width: 85%;
+            font-size: 15.2px; /* تصغير بنسبة 5% */
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
@@ -31,11 +36,13 @@
             color: var(--color-text);
             line-height: 1.6;
             overflow-x: hidden;
+            font-family: 'Tajawal', 'Segoe UI', sans-serif;
         }
 
         body[dir="ltr"] {
             direction: ltr;
             text-align: left;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
         }
 
         body[dir="rtl"] {
@@ -45,8 +52,8 @@
 
         /* شريط التنقل */
         .navbar {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            padding: 1rem 5%;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            padding: 0.9rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -56,6 +63,7 @@
             z-index: 1000;
             box-shadow: var(--shadow);
             overflow: hidden;
+            backdrop-filter: blur(10px);
         }
 
         .navbar::before {
@@ -76,14 +84,14 @@
         }
 
         .logo h1 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--color-white);
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         .logo span {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: block;
             font-weight: 400;
         }
@@ -94,7 +102,7 @@
         }
 
         .nav-links li {
-            margin: 0 1rem;
+            margin: 0 0.9rem;
         }
 
         .nav-links a {
@@ -104,7 +112,7 @@
             transition: var(--transition);
             padding: 0.5rem 0;
             position: relative;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .nav-links a:after {
@@ -133,14 +141,14 @@
             background: rgba(255, 255, 255, 0.2);
             border: none;
             color: var(--color-white);
-            padding: 0.5rem 1rem;
+            padding: 0.45rem 0.9rem;
             border-radius: 30px;
             cursor: pointer;
             transition: var(--transition);
             display: flex;
             align-items: center;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             position: relative;
             overflow: hidden;
         }
@@ -159,17 +167,18 @@
 
         .language-toggle:hover {
             background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
 
         .language-toggle i {
-            margin: 0 0.5rem;
+            margin: 0 0.45rem;
         }
 
         /* المحتوى الرئيسي */
         .container {
             max-width: var(--container-width);
-            margin: 5rem auto 2rem;
-            padding: 0 15px;
+            margin: 4.75rem auto 1.9rem;
+            padding: 0 14px;
         }
 
         .hero {
@@ -177,43 +186,60 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: var(--color-light);
+            margin-bottom: 2.85rem;
+            padding: 2.85rem 1.9rem;
+            background: linear-gradient(135deg, rgba(184, 137, 85, 0.1), rgba(232, 214, 195, 0.1));
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+            opacity: 0.5;
+            transform: rotate(30deg);
         }
 
         .hero-content h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            color: #444;
+            font-size: 2.375rem;
+            margin-bottom: 1.425rem;
+            color: var(--color-dark);
             line-height: 1.3;
+            font-weight: 700;
+            position: relative;
         }
 
         .hero-content p {
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
+            margin-bottom: 1.9rem;
+            font-size: 1.045rem;
             color: var(--color-text-light);
-            max-width: 800px;
+            max-width: 760px;
             line-height: 1.8;
         }
 
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
             color: white;
-            padding: 0.9rem 2.2rem;
-            border-radius: 30px;
+            padding: 0.95rem 2.375rem;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
             border: none;
             cursor: pointer;
             box-shadow: var(--shadow);
-            font-size: 1rem;
+            font-size: 0.95rem;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
         .btn::before {
@@ -229,122 +255,157 @@
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
 
         /* الأقسام */
         .section {
-            margin-bottom: 3rem;
-            padding: 2rem;
+            margin-bottom: 2.85rem;
+            padding: 2.375rem;
             background: var(--color-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .section-title {
+            font-size: 1.71rem;
+            margin-bottom: 1.9rem;
+            padding-bottom: 0.76rem;
+            border-bottom: 2px solid var(--color-primary);
+            color: var(--color-dark);
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 47.5px;
+            height: 2px;
+            background: var(--color-secondary);
+        }
+
+        /* الخبرة والتعليم - تصميم جديد للتواريخ */
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.9rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1.9rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 28.5px;
+            width: 19px;
+            height: 19px;
+            background: var(--color-white);
+            border: 3px solid var(--color-primary);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        body[dir="rtl"] .timeline-item::before {
+            right: -9.5px;
+        }
+
+        body[dir="ltr"] .timeline-item::before {
+            left: -9.5px;
+        }
+
+        .timeline-date {
+            min-width: 114px;
+            text-align: center;
+            color: var(--color-primary);
+            font-weight: 700;
+            font-size: 0.95rem;
+            background: var(--color-light);
+            padding: 0.57rem 0.95rem;
+            border-radius: 30px;
+            align-self: flex-start;
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: var(--color-light);
+            padding: 1.425rem;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
         }
 
-        .section-title {
-            font-size: 1.7rem;
-            margin-bottom: 2rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 2px solid var(--color-primary);
-            color: #444;
-            font-weight: 600;
-        }
-
-        /* الخبرة والتعليم */
-        .timeline {
-            position: relative;
-            padding: 1.5rem 0;
-        }
-
-        .timeline:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
-        }
-
-        body[dir="rtl"] .timeline:before {
-            right: 30px;
-        }
-
-        body[dir="ltr"] .timeline:before {
-            left: 30px;
-        }
-
-        .timeline-item {
-            margin-bottom: 2.2rem;
-            position: relative;
-        }
-
-        body[dir="rtl"] .timeline-item {
-            padding-right: 80px;
-        }
-
-        body[dir="ltr"] .timeline-item {
-            padding-left: 80px;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-date {
-            position: absolute;
-            top: 5px;
-            width: 70px;
-            text-align: center;
-            color: var(--color-primary);
-            font-weight: 600;
-            font-size: 0.9rem;
-            background: var(--color-light);
-            padding: 0.4rem 0.6rem;
-            border-radius: 4px;
-        }
-
-        body[dir="rtl"] .timeline-date {
-            right: 0;
-        }
-
-        body[dir="ltr"] .timeline-date {
-            left: 0;
-        }
-
         .timeline-content h3 {
-            margin-bottom: 0.6rem;
-            color: #555;
-            font-size: 1.2rem;
+            margin-bottom: 0.76rem;
+            color: var(--color-dark);
+            font-size: 1.235rem;
+            font-weight: 600;
         }
 
         .timeline-content p {
             color: var(--color-text-light);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* المهارات */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+            gap: 1.9rem;
         }
 
         .skill-category {
-            margin-bottom: 1.5rem;
+            background: var(--color-light);
+            padding: 1.425rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
 
         .skill-category h3 {
-            margin-bottom: 1rem;
-            color: #555;
+            margin-bottom: 1.14rem;
+            color: var(--color-dark);
             display: flex;
             align-items: center;
-            font-size: 1.2rem;
+            font-size: 1.14rem;
+            font-weight: 600;
         }
 
         .skill-category h3 i {
-            margin: 0 0.5rem;
+            margin: 0 0.76rem;
             color: var(--color-primary);
+            font-size: 1.235rem;
         }
 
         .skill-list {
@@ -352,47 +413,86 @@
         }
 
         .skill-list li {
-            padding: 0.6rem 0;
-            border-bottom: 1px dashed #eee;
+            padding: 0.76rem 0;
+            border-bottom: 1px dashed #e2e8f0;
             display: flex;
             align-items: center;
+            transition: var(--transition);
+        }
+
+        .skill-list li:hover {
+            color: var(--color-primary);
         }
 
         .skill-list li:before {
             content: '•';
             color: var(--color-primary);
-            font-size: 1.5rem;
-            margin: 0 0.5rem;
+            font-size: 1.425rem;
+            margin: 0 0.76rem;
+            font-weight: bold;
         }
 
         /* التواصل */
         .contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 1.425rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            padding: 1.14rem 1.71rem;
             border-radius: var(--border-radius);
             color: white;
             flex: 1;
-            min-width: 250px;
+            min-width: 237.5px;
             box-shadow: var(--shadow);
             transition: var(--transition);
         }
 
         .contact-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: var(--shadow-hover);
         }
 
         .contact-item i {
-            margin: 0 0.8rem;
-            font-size: 1.3rem;
+            margin: 0 0.95rem;
+            font-size: 1.425rem;
+        }
+
+        /* تصميم جديد للتواريخ على الهواتف */
+        @media (max-width: 768px) {
+            .timeline-item {
+                flex-direction: column;
+                gap: 0.95rem;
+            }
+            
+            .timeline-item::before {
+                display: none;
+            }
+            
+            .timeline-date {
+                align-self: center;
+                min-width: 130px;
+                font-size: 0.9rem;
+                padding: 0.6rem 1rem;
+                order: 1;
+            }
+            
+            .timeline-content {
+                order: 2;
+                text-align: center;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .timeline-content p {
+                font-size: 0.95rem;
+            }
         }
 
         /* النافذة المنبثقة للسيرة الذاتية */
@@ -403,38 +503,38 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
+            background-color: rgba(0, 0, 0, 0.9);
             z-index: 2000;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 1.9rem;
         }
 
         .modal-content {
             background-color: var(--color-white);
             width: 100%;
-            max-width: 900px;
+            max-width: 855px;
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 9.5px 38px rgba(0, 0, 0, 0.3);
             animation: modalFade 0.3s;
-            max-height: 90vh;
+            max-height: 85.5vh;
         }
 
         @keyframes modalFade {
             from {
                 opacity: 0;
-                transform: translateY(-50px);
+                transform: translateY(-47.5px) scale(0.9);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
 
         .modal-header {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            padding: 1.2rem 1.5rem;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            padding: 1.14rem 1.425rem;
             color: white;
             display: flex;
             justify-content: space-between;
@@ -445,18 +545,25 @@
             background: none;
             border: none;
             color: white;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             cursor: pointer;
             transition: var(--transition);
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
         }
 
         .close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
             transform: rotate(90deg);
         }
 
         .modal-body {
             padding: 0;
-            max-height: calc(90vh - 60px);
+            max-height: calc(85.5vh - 57px);
             overflow: auto;
             display: flex;
             justify-content: center;
@@ -471,11 +578,11 @@
         /* التكيف مع الشاشات الصغيرة */
         @media (max-width: 992px) {
             :root {
-                --container-width: 95%;
+                --container-width: 90%;
             }
             
             .navbar {
-                padding: 0.8rem 4%;
+                padding: 0.76rem 4%;
             }
             
             .nav-links {
@@ -483,33 +590,37 @@
             }
             
             .hero-content h2 {
-                font-size: 1.9rem;
+                font-size: 2.09rem;
             }
             
             .section {
-                padding: 1.5rem;
+                padding: 1.9rem;
             }
         }
 
         @media (max-width: 768px) {
             .container {
-                margin-top: 4.5rem;
+                margin-top: 4.275rem;
             }
             
             .hero {
-                padding: 1.5rem;
+                padding: 1.9rem 1.425rem;
             }
             
             .hero-content h2 {
-                font-size: 1.7rem;
+                font-size: 1.8rem;
             }
             
             .hero-content p {
-                font-size: 1rem;
+                font-size: 0.95rem;
+            }
+            
+            .section {
+                padding: 1.425rem;
             }
             
             .section-title {
-                font-size: 1.5rem;
+                font-size: 1.52rem;
             }
             
             .contact-info {
@@ -520,52 +631,40 @@
                 min-width: 100%;
             }
             
-            body[dir="rtl"] .timeline-item,
-            body[dir="ltr"] .timeline-item {
-                padding: 0;
-                padding-top: 50px;
-            }
-            
-            body[dir="rtl"] .timeline-date,
-            body[dir="ltr"] .timeline-date {
-                top: 0;
-                right: 0;
-                left: 0;
-                margin: 0 auto;
-                width: 140px;
-            }
-            
-            body[dir="rtl"] .timeline:before,
-            body[dir="ltr"] .timeline:before {
-                display: none;
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 480px) {
             .logo h1 {
-                font-size: 1.3rem;
+                font-size: 1.33rem;
             }
             
             .logo span {
-                font-size: 0.8rem;
+                font-size: 0.76rem;
             }
             
             .language-toggle {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
+                padding: 0.38rem 0.76rem;
+                font-size: 0.76rem;
             }
             
             .hero-content h2 {
-                font-size: 1.5rem;
+                font-size: 1.615rem;
             }
             
             .btn {
-                padding: 0.8rem 1.8rem;
-                font-size: 0.9rem;
+                padding: 0.855rem 1.8rem;
+                font-size: 0.855rem;
             }
             
             .section {
-                padding: 1.2rem;
+                padding: 1.425rem 1.14rem;
+            }
+            
+            .timeline-content {
+                padding: 1.14rem;
             }
         }
     </style>
@@ -574,7 +673,7 @@
     <!-- شريط التنقل -->
     <nav class="navbar">
         <div class="logo">
-            <h1>وائل أحمد <span>مصمم جرافيك محترف</span></h1>
+            <h1>صابر أحمد <span>مصمم جرافيك محترف</span></h1>
         </div>
         <ul class="nav-links">
             <li><a href="#about">نبذة عني</a></li>
@@ -595,7 +694,7 @@
         <section class="hero" id="about">
             <div class="hero-content">
                 <h2>مصمم جرافيك مبتكر ومبدع</h2>
-                <p>مصمم جرافيك مبتكر ومبدع بخبرة تزيد عن 3 سنوات في تصميم العلامات التجارية والمطبوعات والإعلانات الرقمية. ماهر في استخدام برامج التصميم المختلفة ولدي شغف كبير لإنشاء تصاميم إبداعية تلبي احتياجات العملاء وتتفوق على توقعاتهم.</p>
+                <p>أنا شخص مبتكر يعشق تصميم الجرافيك وتقديم الأفكار الجديدة والمتنوعة. أتمتع بالحب العميق للتعلم والتطور الشخصي، وأسعى دائمًا لتعزيز قدراتي الإبداعية ومهاراتي.</p>
                 <button class="btn" id="viewCvBtn">عرض السيرة الذاتية الورقية</button>
             </div>
         </section>
@@ -603,19 +702,19 @@
         <!-- قسم الخبرة -->
         <section class="section" id="experience">
             <h2 class="section-title">الخبرة المهنية</h2>
-            <div class="timeline">
+            <div class="timeline-container">
                 <div class="timeline-item">
-                    <div class="timeline-date">2023 - 2024</div>
+                    <div class="timeline-date">2023 - 2025</div>
                     <div class="timeline-content">
-                        <h3>مصمم جرافيك مستقل</h3>
-                        <p>عمل حر في تصميم الهويات البصرية والمواد الإعلانية للعديد من العملاء بمختلف المجالات. تصميم شعارات، هويات بصرية، مواد تسويقية، ومنشورات لوسائل التواصل الاجتماعي.</p>
+                        <h3>مصمم الجرافيك مستقل</h3>
+                        <p>أعمل كمصمم جرافيك مستقل، متخصص في إنشاء تصاميم إبداعية تلبي احتياجات العملاء.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2021 - 2023</div>
                     <div class="timeline-content">
-                        <h3>مصمم جرافيك في شركة إبداع</h3>
-                        <p>تصميم الهويات البصرية والمواد التسويقية والإعلانية للشركة وعملائها. إدارة مشاريع التصميم وتنفيذها وفقًا لمعايير الجودة والوقت المحدد.</p>
+                        <h3>مدير فني - تصميم جرافيك</h3>
+                        <p>قمت بإدارة الفني للتصميم الجرافيكي، متخصص في إنشاء هويات بصرية وإدارة المشاريع الإبداعية.</p>
                     </div>
                 </div>
             </div>
@@ -624,12 +723,19 @@
         <!-- قسم التعليم -->
         <section class="section" id="education">
             <h2 class="section-title">التعليم</h2>
-            <div class="timeline">
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-date">2018 - 2021</div>
+                    <div class="timeline-content">
+                        <h3>بكالوريوس التصميم</h3>
+                        <p>جامعة الفنون، تخصصت في تصميم الجرافيك والفنون البصرية.</p>
+                    </div>
+                </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2015 - 2018</div>
                     <div class="timeline-content">
-                        <h3>بكالوريوس تصميم مطبوعات</h3>
-                        <p>جامعة الفنون، بتقدير امتياز. مشروع التخرج: تصميم هوية بصرية متكاملة لمهرجان ثقافي.</p>
+                        <h3>بكالوريوس فنون جميلة</h3>
+                        <p>جامعة الفنون، درست الفنون الجميلة والتطبيقات الفنية.</p>
                     </div>
                 </div>
             </div>
@@ -640,36 +746,20 @@
             <h2 class="section-title">المهارات</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3><i class="fas fa-paint-brush"></i> <span class="skill-title">إتقان برامج التصميم</span></h3>
+                    <h3><i class="fas fa-paint-brush"></i> <span class="skill-title">الطباعة</span></h3>
                     <ul class="skill-list">
-                        <li class="skill-item" data-key="software1">Adobe Photoshop - مستوى متقدم</li>
-                        <li class="skill-item" data-key="software2">Adobe Illustrator - مستوى متقدم</li>
-                        <li class="skill-item" data-key="software3">Adobe InDesign - مستوى متوسط</li>
-                        <li class="skill-item" data-key="software4">Figma - مستوى متقدم</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-star"></i> <span class="skill-title">التخصصات</span></h3>
-                    <ul class="skill-list">
-                        <li class="skill-item" data-key="specialty1">تصميم الشعارات والهويات البصرية</li>
-                        <li class="skill-item" data-data-key="specialty2">تصميم المواد الإعلانية والمطبوعات</li>
-                        <li class="skill-item" data-key="specialty3">تصميم الإعلانات الرقمية</li>
-                        <li class="skill-item" data-key="specialty4">تصميم تجربة المستخدم (UX)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-graduation-cap"></i> <span class="skill-title">الدورات</span></h3>
-                    <ul class="skill-list">
-                        <li class="skill-item" data-key="course1">دورة تصميم المطبوعات المتقدمة - 2019</li>
-                        <li class="skill-item" data-key="course2">دورة الرسم الجرافيكي الرقمي - 2020</li>
-                        <li class="skill-item" data-key="course3">دورة تصميم تجربة المستخدم - 2022</li>
+                        <li class="skill-item" data-key="print1">ملصقات وبطاقات بريدية</li>
+                        <li class="skill-item" data-key="print2">شعارات وبطاقات أعمال</li>
+                        <li class="skill-item" data-key="print3">نشرات إخبارية</li>
+                        <li class="skill-item" data-key="print4">كتيبات</li>
                     </ul>
                 </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-language"></i> <span class="skill-title">اللغات</span></h3>
                     <ul class="skill-list">
-                        <li class="skill-item" data-key="language1">اللغة العربية (اللغة الأم) - إتقان كامل</li>
-                        <li class="skill-item" data-key="language2">اللغة الإنجليزية - مستوى متقدم (جيد جداً)</li>
+                        <li class="skill-item" data-key="language1">اللغة العربية (اللغة الأم)</li>
+                        <li class="skill-item" data-key="language2">اللغة الإنجليزية (جيد جدا)</li>
+                        <li class="skill-item" data-key="language3">اللغة الأسبانية (جيد)</li>
                     </ul>
                 </div>
             </div>
@@ -677,7 +767,7 @@
 
         <!-- قسم التواصل -->
         <section class="section" id="contact">
-            <h2 class="section-title">تواصلوا معي</h2>
+            <h2 class="section-title">التواصل</h2>
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
@@ -685,7 +775,11 @@
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <span>+123-456-7890</span>
+                    <span>+966 55 864 4701</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>النماص</span>
                 </div>
             </div>
         </section>
@@ -695,7 +789,7 @@
     <div class="modal" id="cvModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>السيرة الذاتية - وائل أحمد</h2>
+                <h2>السيرة الذاتية - صابر أحمد</h2>
                 <button class="close-btn">&times;</button>
             </div>
             <div class="modal-body">
@@ -709,8 +803,8 @@
         const translations = {
             ar: {
                 dir: "rtl",
-                title: "وائل أحمد - مصمم جرافيك",
-                logoTitle: "وائل أحمد",
+                title: "صابر أحمد - مصمم جرافيك",
+                logoTitle: "صابر أحمد",
                 logoSubtitle: "مصمم جرافيك محترف",
                 navAbout: "نبذة عني",
                 navExperience: "الخبرة",
@@ -719,54 +813,51 @@
                 navContact: "التواصل",
                 languageBtn: "English",
                 heroTitle: "مصمم جرافيك مبتكر ومبدع",
-                heroText: "مصمم جرافيك مبتكر ومبدع بخبرة تزيد عن 3 سنوات في تصميم العلامات التجارية والمطبوعات والإعلانات الرقمية. ماهر في استخدام برامج التصميم المختلفة ولدي شغف كبير لإنشاء تصاميم إبداعية تلبي احتياجات العملاء وتتفوق على توقعاتهم.",
+                heroText: "أنا شخص مبتكر يعشق تصميم الجرافيك وتقديم الأفكار الجديدة والمتنوعة. أتمتع بالحب العميق للتعلم والتطور الشخصي، وأسعى دائمًا لتعزيز قدراتي الإبداعية ومهاراتي.",
                 viewCv: "عرض السيرة الذاتية الورقية",
                 experienceTitle: "الخبرة المهنية",
                 educationTitle: "التعليم",
                 skillsTitle: "المهارات",
-                contactTitle: "تواصلوا معي",
-                modalTitle: "السيرة الذاتية - وائل أحمد",
+                contactTitle: "التواصل",
+                modalTitle: "السيرة الذاتية - صابر أحمد",
                 // المهارات
-                softwareTitle: "إتقان برامج التصميم",
-                specialtyTitle: "التخصصات",
-                coursesTitle: "الدورات",
+                printTitle: "الطباعة",
                 languagesTitle: "اللغات",
-                software1: "Adobe Photoshop - مستوى متقدم",
-                software2: "Adobe Illustrator - مستوى متقدم",
-                software3: "Adobe InDesign - مستوى متوسط",
-                software4: "Figma - مستوى متقدم",
-                specialty1: "تصميم الشعارات والهويات البصرية",
-                specialty2: "تصميم المواد الإعلانية والمطبوعات",
-                specialty3: "تصميم الإعلانات الرقمية",
-                specialty4: "تصميم تجربة المستخدم (UX)",
-                course1: "دورة تصميم المطبوعات المتقدمة - 2019",
-                course2: "دورة الرسم الجرافيكي الرقمي - 2020",
-                course3: "دورة تصميم تجربة المستخدم - 2022",
-                language1: "اللغة العربية (اللغة الأم) - إتقان كامل",
-                language2: "اللغة الإنجليزية - مستوى متقدم (جيد جداً)",
+                print1: "ملصقات وبطاقات بريدية",
+                print2: "شعارات وبطاقات أعمال",
+                print3: "نشرات إخبارية",
+                print4: "كتيبات",
+                language1: "اللغة العربية (اللغة الأم)",
+                language2: "اللغة الإنجليزية (جيد جدا)",
+                language3: "اللغة الأسبانية (جيد)",
                 // الجدول الزمني
                 timelineItems: {
                     exp1: {
-                        date: "2023 - 2024",
-                        title: "مصمم جرافيك مستقل",
-                        desc: "عمل حر في تصميم الهويات البصرية والمواد الإعلانية للعديد من العملاء بمختلف المجالات. تصميم شعارات، هويات بصرية، مواد تسويقية، ومنشورات لوسائل التواصل الاجتماعي."
+                        date: "2023 - 2025",
+                        title: "مصمم الجرافيك مستقل",
+                        desc: "أعمل كمصمم جرافيك مستقل، متخصص في إنشاء تصاميم إبداعية تلبي احتياجات العملاء."
                     },
                     exp2: {
                         date: "2021 - 2023",
-                        title: "مصمم جرافيك في شركة إبداع",
-                        desc: "تصميم الهويات البصرية والمواد التسويقية والإعلانية للشركة وعملائها. إدارة مشاريع التصميم وتنفيذها وفقًا لمعايير الجودة والوقت المحدد."
+                        title: "مدير فني - تصميم جرافيك",
+                        desc: "قمت بإدارة الفني للتصميم الجرافيكي، متخصص في إنشاء هويات بصرية وإدارة المشاريع الإبداعية."
                     },
                     edu1: {
+                        date: "2018 - 2021",
+                        title: "بكالوريوس التصميم",
+                        desc: "جامعة الفنون، تخصصت في تصميم الجرافيك والفنون البصرية."
+                    },
+                    edu2: {
                         date: "2015 - 2018",
-                        title: "بكالوريوس تصميم مطبوعات",
-                        desc: "جامعة الفنون، بتقدير امتياز. مشروع التخرج: تصميم هوية بصرية متكاملة لمهرجان ثقافي."
+                        title: "بكالوريوس فنون جميلة",
+                        desc: "جامعة الفنون، درست الفنون الجميلة والتطبيقات الفنية."
                     }
                 }
             },
             en: {
                 dir: "ltr",
-                title: "Wael Ahmed - Graphic Designer",
-                logoTitle: "Wael Ahmed",
+                title: "Saber Ahmed - Graphic Designer",
+                logoTitle: "Saber Ahmed",
                 logoSubtitle: "Professional Graphic Designer",
                 navAbout: "About Me",
                 navExperience: "Experience",
@@ -775,47 +866,44 @@
                 navContact: "Contact",
                 languageBtn: "العربية",
                 heroTitle: "Creative and Innovative Graphic Designer",
-                heroText: "Creative and innovative graphic designer with over 3 years of experience in branding, print design, and digital advertising. Skilled in using various design software with a great passion for creating innovative designs that meet client needs and exceed expectations.",
+                heroText: "I am an innovative person who loves graphic design and presenting new and diverse ideas. I have a deep love for learning and personal development, and I always strive to enhance my creative abilities and skills.",
                 viewCv: "View Paper CV",
                 experienceTitle: "Professional Experience",
                 educationTitle: "Education",
                 skillsTitle: "Skills",
-                contactTitle: "Contact Me",
-                modalTitle: "Curriculum Vitae - Wael Ahmed",
+                contactTitle: "Contact",
+                modalTitle: "Curriculum Vitae - Saber Ahmed",
                 // المهارات
-                softwareTitle: "Design Software Proficiency",
-                specialtyTitle: "Specialties",
-                coursesTitle: "Courses",
+                printTitle: "Print",
                 languagesTitle: "Languages",
-                software1: "Adobe Photoshop - Advanced Level",
-                software2: "Adobe Illustrator - Advanced Level",
-                software3: "Adobe InDesign - Intermediate Level",
-                software4: "Figma - Advanced Level",
-                specialty1: "Logo and Visual Identity Design",
-                specialty2: "Advertising Materials and Print Design",
-                specialty3: "Digital Advertising Design",
-                specialty4: "User Experience (UX) Design",
-                course1: "Advanced Print Design Course - 2019",
-                course2: "Digital Graphic Drawing Course - 2020",
-                course3: "User Experience Design Course - 2022",
-                language1: "Arabic (Native) - Full Proficiency",
-                language2: "English - Advanced Level (Very Good)",
+                print1: "Posters and postcards",
+                print2: "Logos and business cards",
+                print3: "Newsletters",
+                print4: "Brochures",
+                language1: "Arabic (Native)",
+                language2: "English (Very Good)",
+                language3: "Spanish (Good)",
                 // الجدول الزمني
                 timelineItems: {
                     exp1: {
-                        date: "2023 - 2024",
+                        date: "2023 - 2025",
                         title: "Freelance Graphic Designer",
-                        desc: "Freelance work in designing visual identities and advertising materials for various clients across different industries. Designed logos, visual identities, marketing materials, and social media posts."
+                        desc: "I work as a freelance graphic designer, specializing in creating creative designs that meet client needs."
                     },
                     exp2: {
                         date: "2021 - 2023",
-                        title: "Graphic Designer at Ibdaa Company",
-                        desc: "Designed visual identities, marketing and advertising materials for the company and its clients. Managed design projects and executed them according to quality standards and deadlines."
+                        title: "Art Director - Graphic Design",
+                        desc: "I managed the technical aspect of graphic design, specializing in creating visual identities and managing creative projects."
                     },
                     edu1: {
+                        date: "2018 - 2021",
+                        title: "Bachelor of Design",
+                        desc: "University of Arts, specialized in graphic design and visual arts."
+                    },
+                    edu2: {
                         date: "2015 - 2018",
-                        title: "Bachelor of Print Design",
-                        desc: "University of Arts, with excellence honors. Graduation project: Designing a comprehensive visual identity for a cultural festival."
+                        title: "Bachelor of Fine Arts",
+                        desc: "University of Arts, studied fine arts and artistic applications."
                     }
                 }
             }
@@ -875,7 +963,7 @@
             
             // ترجمة عناوين المهارات
             document.querySelectorAll('.skill-title').forEach((el, index) => {
-                const keys = ['softwareTitle', 'specialtyTitle', 'coursesTitle', 'languagesTitle'];
+                const keys = ['printTitle', 'languagesTitle'];
                 if (index < keys.length) {
                     el.textContent = t[keys[index]];
                 }
@@ -890,17 +978,15 @@
             });
             
             // ترجمة محتوى الجدول الزمني
-            document.querySelector('#exp1 .timeline-date').textContent = t.timelineItems.exp1.date;
-            document.querySelector('#exp1 h3').textContent = t.timelineItems.exp1.title;
-            document.querySelector('#exp1 p').textContent = t.timelineItems.exp1.desc;
-            
-            document.querySelector('#exp2 .timeline-date').textContent = t.timelineItems.exp2.date;
-            document.querySelector('#exp2 h3').textContent = t.timelineItems.exp2.title;
-            document.querySelector('#exp2 p').textContent = t.timelineItems.exp2.desc;
-            
-            document.querySelector('#edu1 .timeline-date').textContent = t.timelineItems.edu1.date;
-            document.querySelector('#edu1 h3').textContent = t.timelineItems.edu1.title;
-            document.querySelector('#edu1 p').textContent = t.timelineItems.edu1.desc;
+            document.querySelectorAll('.timeline-item').forEach((item, index) => {
+                const keys = ['exp1', 'exp2', 'edu1', 'edu2'];
+                if (index < keys.length) {
+                    const key = keys[index];
+                    item.querySelector('.timeline-date').textContent = t.timelineItems[key].date;
+                    item.querySelector('.timeline-content h3').textContent = t.timelineItems[key].title;
+                    item.querySelector('.timeline-content p').textContent = t.timelineItems[key].desc;
+                }
+            });
         }
 
         // التحكم في النافذة المنبثقة للسيرة الذاتية
@@ -927,11 +1013,6 @@
 
         // تهيئة الصفحة عند التحميل
         document.addEventListener('DOMContentLoaded', () => {
-            // إضافة IDs لعناصر الجدول الزمني للترجمة
-            document.querySelectorAll('.timeline-item')[0].id = 'exp1';
-            document.querySelectorAll('.timeline-item')[1].id = 'exp2';
-            document.querySelectorAll('.timeline-item')[2].id = 'edu1';
-            
             // إضافة IDs لعناصر التنقل للترجمة
             const navLinks = document.querySelectorAll('.nav-links a');
             navLinks[0].id = 'navAbout';
